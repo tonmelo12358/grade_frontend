@@ -1,0 +1,319 @@
+body,
+ul,
+li {
+    font-family: 'Roboto', sans-serif;
+    color: #0c0c0c;
+    background-color: #ffffff;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: white;
+    text-align: center;
+    position: relative;
+    width: 100%;
+}
+
+.title {
+    color: white;
+    width: 100%;
+    background-color: hsl(17, 85%, 71%);
+    display: inline-block;
+    padding: -8px 0px;
+    position: relative;
+    top: -5px;
+}
+
+.banner {
+    height: 350px;
+    overflow: hidden;
+    margin: 20px auto 100px auto;
+}
+
+.banner img {
+    margin: -50px 0px 0px 0px;
+    width: 60%;
+    padding: 0px 0px;
+    border: 1px solid white;
+    margin: 40px auto 10px auto;
+}
+
+.searchMovie,
+.addToSchedule {
+    width: 60%;
+    background-color: transparent;
+    border: 1px ridge #00c6a9;
+    outline: inset;
+    box-shadow: 20px 5px 20px grey;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 20px auto;
+}
+
+.searchMovie h4,
+.addToSchedule h4,
+.container h4 {
+    position: relative;
+    margin-top: 0px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    font-size: x-large;
+}
+
+.searchMovie h4 span,
+.addToSchedule h4 span,
+.container h4 span {
+    color: #f54343;
+}
+
+.searchMovie h4::before,
+.addToSchedule h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 135px;
+    height: 4px;
+    background-color: #f54343;
+}
+
+.container h4::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 240px;
+    height: 4px;
+    background-color: #f54343;
+}
+
+.searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.movieCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 200px; /* Largura fixa para todos os cartões */
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.movieCard img {
+    width: 100%; /* Ajusta a imagem à largura do cartão */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 300px; /* Altura máxima para evitar imagens muito altas */
+    object-fit: cover; /* Mantém a proporção da imagem e preenche o espaço */
+    border-radius: 4px;
+}
+
+.movieDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Alinha os itens ao centro horizontalmente */
+    text-align: center; /* Alinha o texto ao centro */
+    margin-top: 10px;
+    width: 100%; /* Garante que o conteúdo ocupe a largura total do cartão */
+}
+
+.movieDetails h3 {
+    margin-top: 10px; /* Espaço entre a imagem e o título */
+    margin-bottom: 5px;
+}
+
+.movieDetails p {
+    margin: 0;
+}
+
+#movieDetailsContainer {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+#movieDetails {
+    display: flex;
+}
+
+#movieDetailsPoster {
+    max-width: 40%;
+    height: auto;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+#movieDetailsInfo {
+    flex: 1;
+}
+
+#movieDetailsTitle {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#movieDetailsInfo p {
+    margin: 5px 0;
+}
+
+#closeDetails,
+#addToSchedule {
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+#closeDetails {
+    background-color: #f54343;
+    color: #fff;
+}
+
+#closeDetails:hover {
+    background-color: #d32f2f;
+}
+
+#addToSchedule {
+    background-color: #08b51c;
+    color: #ffffff;
+}
+
+#addToSchedule:hover {
+    background-color: #0ae941;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[readonly] {
+    background-color: #f9f9f9;
+}
+
+.addBtn {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: #00c6a9;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.addBtn:hover {
+    background-color: #00a389;
+}
+
+
+/* Tabela de itens de grade */
+
+.no-items-message {
+    text-align: center;
+    color: #ff0000;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.filter label {
+    font-weight: bold;
+}
+
+.filter input[type="date"] {
+    width: auto; /* Ajusta automaticamente ao conteúdo */
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#loadDataButton {
+    background-color: #00c6a9;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#loadDataButton:hover {
+    background-color: #00a389;
+}
+
+.tableContainer {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+}
+
+td {
+    background-color: #fafafa;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    color: #333;
+    font-size: 18px;
+}
